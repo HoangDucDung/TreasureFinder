@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TreasureFinder.Domain\TreasureFinder.Domain.csproj" />
     <ProjectReference Include="..\TreasureFinder.Service.Contract\TreasureFinder.Service.Contract.csproj" />
     <ProjectReference Include="..\TreasureFinder.Service\TreasureFinder.Service.csproj" />
     <ProjectReference Include="..\TreasureHunt.Infrastructure.Repositories\TreasureHunt.Infrastructure.Repositories.csproj" />

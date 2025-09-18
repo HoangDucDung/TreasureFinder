@@ -1,0 +1,6 @@
+@TreasureFinder.API.Controllers_HostAddress = http://localhost:5124
+
+GET {{TreasureFinder.API.Controllers_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TreasureFinder.Service.Contract.Treasures;
 
 namespace TreasureFinder.Controllers
 {
