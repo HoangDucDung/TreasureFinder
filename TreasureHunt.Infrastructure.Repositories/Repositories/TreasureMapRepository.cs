@@ -21,14 +21,6 @@ namespace TreasureHunt.Infrastructure.Repositories.Repositories
                 "SELECT Id, NumRows, NumCols, NumChestTypes, MinimumFuel, OptimalPath FROM MapConfiguration");
         }
 
-        public async Task<TreasureMap?> GetMapByIdAsync(Guid id)
-        {
-            using var connection = _connectionFactory.CreateConnection();
-            return await connection.QuerySingleOrDefaultAsync<TreasureMap>(
-                "SELECT Id, NumRows, NumCols, NumChestTypes, MinimumFuel, OptimalPath FROM MapConfiguration WHERE Id = @Id",
-                new { Id = id });
-        }
-
         public async Task<TreasureMap> GetMapWithIslandsAsync(Guid id)
         {
             using var connection = _connectionFactory.CreateConnection();

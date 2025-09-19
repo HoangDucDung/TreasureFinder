@@ -24,8 +24,10 @@ namespace TreasureFinder.Service.Treasures
 
         public async Task<TreasureMapDto?> GetMapByIdAsync(Guid id)
         {
-            var map = await _treasureMapRepository.GetMapByIdAsync(id);
+            var map = await _treasureMapRepository.GetMapWithIslandsAsync(id);
             if (map == null) return null;
+
+
             return _mapper.Map<TreasureMapDto>(map);
         }
 
@@ -51,7 +53,7 @@ namespace TreasureFinder.Service.Treasures
 
             await _treasureMapRepository.UpdateMapRouteAsync(mapId, map.MinimumFuel, map.OptimalPath);
 
-            return map.MinimumFuel == 0 && string.IsNullOrEmpty(map.OptimalPath);
+            return map.MinimumFuel != 0 && !string.IsNullOrEmpty(map.OptimalPath);
         }
     }
 }
